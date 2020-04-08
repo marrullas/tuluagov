@@ -1,0 +1,5 @@
+lib/app/news/news_module.dart
+lib/app/news/news_page.dart
+test/app/news/news_page_test.dart
+lib/app/news/news_controller.dart
+test/app/news/news_controller_test.dart

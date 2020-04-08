@@ -1,4 +1,4 @@
-package com.example.tuluagov
+package co.ticbox.tuluagov
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

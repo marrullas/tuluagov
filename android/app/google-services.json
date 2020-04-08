@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1015954048160",
+    "firebase_url": "https://tuluagov.firebaseio.com",
+    "project_id": "tuluagov",
+    "storage_bucket": "tuluagov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015954048160:android:925cf1bdae0152d2d1b5c5",
+        "android_client_info": {
+          "package_name": "co.ticbox.tuluagov"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015954048160-tj8lfne7alps1vqd5jjg52f9lkep9ssg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.ticbox.tuluagov",
+            "certificate_hash": "ed9a01f3553770f2dbc69c504e5ea7e11e8ace2e"
+          }
+        },
+        {
+          "client_id": "1015954048160-roaigiq7u73hh856ounvbe25vvc8lbfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhNRd21U-xIyEpmN56vr_Lk9pz4lqOPso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015954048160-roaigiq7u73hh856ounvbe25vvc8lbfo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
