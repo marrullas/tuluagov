@@ -11,6 +11,8 @@ import 'package:tuluagov/app/shared/auth/repositories/auth_repository.dart';
 import 'package:tuluagov/app/shared/auth/repositories/auth_repository_interface.dart';
 import 'package:tuluagov/app/splash/splash_page.dart';
 
+import 'modules/todo/todo_module.dart';
+
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
@@ -26,6 +28,7 @@ class AppModule extends MainModule {
         Router('/login', module: LoginModule()),
         Router('/home', module: HomeModule()),
         Router('/news', module: NewsModule()),
+        Router('/todo', module: TodoModule()),
       ];
 
   @override

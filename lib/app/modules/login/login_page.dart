@@ -28,6 +28,10 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
           RaisedButton(
             onPressed: (){Modular.to.pushNamed('/news');},
             child: Text('ver noticias'),
+          ),
+          RaisedButton(
+            onPressed: (){Modular.to.pushNamed('/todo');},
+            child: Text('ver todo'),
           )
         ],
       ),
