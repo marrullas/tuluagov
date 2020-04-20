@@ -1,8 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tuluagov/app/modules/todo/models/todo_model.dart';
-import 'package:tuluagov/app/modules/todo/todo_module.dart';
+
 import 'todo_controller.dart';
 
 class TodoPage extends StatefulWidget {
@@ -15,7 +16,7 @@ class TodoPage extends StatefulWidget {
 
 class _TodoPageState extends ModularState<TodoPage, TodoController> {
   //use 'controller' variable to access controller
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +25,7 @@ class _TodoPageState extends ModularState<TodoPage, TodoController> {
       ),
       body: Observer(builder: (_) {
         if (controller.todoList.hasError) {
+          print(controller.todoList.error);
           return Center(
               child: RaisedButton(
                   onPressed: controller.getList, child: Text('Error')));
@@ -41,12 +43,16 @@ class _TodoPageState extends ModularState<TodoPage, TodoController> {
                 onLongPress: () {
                   _showDialog(model);
                 },
-                leading: IconButton(icon: Icon(Icons.remove_circle_outline, color:Colors.red), onPressed: model.delete),
+                leading: IconButton(
+                    icon: Icon(Icons.remove_circle_outline, color: Colors.red),
+                    onPressed: () {
+                      controller.delete(model);
+                    }),
                 trailing: Checkbox(
                   value: model.check,
                   onChanged: (check) {
                     model.check = check;
-                    model.save();
+                    controller.save(model);
                   },
                 ),
               );
@@ -82,7 +88,7 @@ class _TodoPageState extends ModularState<TodoPage, TodoController> {
                   child: Text('Cancelar')),
               FlatButton(
                   onPressed: () async {
-                    await model.save();
+                    await controller.save(model);
                     Modular.to.pop();
                   },
                   child: Text('Agregar'))

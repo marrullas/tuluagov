@@ -2,22 +2,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dio/dio.dart';
 
-import 'package:tuluagov/app/modules/todo/repositories/todo_repository.dart';
+import 'package:tuluagov/app/modules/todo/repositories/todo_hasura_repository.dart';
 
 class MockClient extends Mock implements Dio {}
 
 void main() {
-  TodoRepository repository;
+  TodoHasuraRepository repository;
   // MockClient client;
 
   setUp(() {
-    // repository = TodoRepository();
+    // repository = TodoHasuraRepository();
     // client = MockClient();
   });
 
-  group('TodoRepository Test', () {
+  group('TodoHasuraRepository Test', () {
     //  test("First Test", () {
-    //    expect(repository, isInstanceOf<TodoRepository>());
+    //    expect(repository, isInstanceOf<TodoHasuraRepository>());
     //  });
 
     test('returns a Post if the http call completes successfully', () async {

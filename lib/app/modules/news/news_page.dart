@@ -11,7 +11,7 @@ import 'package:tuluagov/app/modules/news/components/featuredImage_widget.dart';
 
 class NewsPage extends StatefulWidget {
   final String title;
-  const NewsPage({Key key, this.title = "News"}) : super(key: key);
+  const NewsPage({Key key, this.title = "Ultimas noticias"}) : super(key: key);
 
   @override
   _NewsPageState createState() => _NewsPageState();

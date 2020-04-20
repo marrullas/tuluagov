@@ -1,0 +1,5 @@
+lib/app/modules/solidaridad/solidaridad_module.dart
+lib/app/modules/solidaridad/solidaridad_page.dart
+test/app/modules/solidaridad/solidaridad_page_test.dart
+lib/app/modules/solidaridad/solidaridad_controller.dart
+test/app/modules/solidaridad/solidaridad_controller_test.dart

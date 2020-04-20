@@ -1,0 +1,5 @@
+lib/app/modules/turismo/turismo_module.dart
+lib/app/modules/turismo/turismo_page.dart
+test/app/modules/turismo/turismo_page_test.dart
+lib/app/modules/turismo/turismo_controller.dart
+test/app/modules/turismo/turismo_controller_test.dart

@@ -16,24 +16,36 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(        
+      appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[
-          RaisedButton(
-            onPressed: controller.loginWithGoogle,
-            child: Text('Login Google'),
-          ),
-          RaisedButton(
-            onPressed: (){Modular.to.pushNamed('/news');},
-            child: Text('ver noticias'),
-          ),
-          RaisedButton(
-            onPressed: (){Modular.to.pushNamed('/todo');},
-            child: Text('ver todo'),
-          )
-        ],
+      body: ListView(
+        
+          children: <Widget>[
+            RaisedButton(
+              onPressed: controller.loginWithGoogle,
+              child: Text('Login Google'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Modular.to.pushNamed('/news');
+              },
+              child: Text('ver noticias'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Modular.to.pushNamed('/home');
+              },
+              child: Text('ir al home'),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Modular.to.pushNamed('/todo');
+              },
+              child: Text('ver todo'),
+            )
+          ],
+      
       ),
     );
   }

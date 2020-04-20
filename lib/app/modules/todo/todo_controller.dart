@@ -21,4 +21,8 @@ abstract class _TodoControllerBase with Store {
     todoList = repository.getTodos().asObservable();
   }
 
+
+  Future save(TodoModel model) => repository.save(model);
+  Future delete(TodoModel model) => repository.delete(model);
+
 }

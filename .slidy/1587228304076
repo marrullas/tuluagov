@@ -1,0 +1,4 @@
+lib/app/modules/solidaridad/widgets/piechart/piechart_widget.dart
+test/app/modules/solidaridad/widgets/piechart/piechart_widget_test.dart
+lib/app/modules/solidaridad/widgets/piechart/piechart_controller.dart
+test/app/modules/solidaridad/widgets/piechart/piechart_controller_test.dart

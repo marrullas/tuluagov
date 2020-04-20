@@ -4,28 +4,16 @@ class TodoModel {
   DocumentReference reference;
   String title;
   bool check;
+  int id;
 
-  TodoModel({this.reference, this.title = '', this.check = false});
+  TodoModel({this.reference, this.title = '', this.check = false, this.id});
 
   factory TodoModel.fromDocument(DocumentSnapshot doc) {
     return TodoModel(
         reference: doc.reference, title: doc['title'], check: doc['check']);
   }
-
-  Future save() async {
-    int total = (await Firestore.instance.collection('todo').getDocuments())
-        .documents
-        .length;
-    if (reference == null) {
-      reference = await Firestore.instance
-          .collection('todo')
-          .add({'title': title, 'check': check, 'position': total + 1});
-    } else {
-      reference.setData({'title': title, 'check': check});
-    }
-  }
-
-  Future delete() {
-    return reference.delete();
+  factory TodoModel.fromJson(Map doc) {
+    return TodoModel(
+        id: doc['id'], title: doc['title'], check: doc['check']);
   }
 }
