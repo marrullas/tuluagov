@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:tuluagov/app/shared/theme/theme_controller.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller
-
+  final ThemeController _themeController = Modular.get();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +29,14 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           style: TextStyle(color: Colors.green),
         ),
       ),
+      floatingActionButton: Observer(builder: (_) {
+        return FloatingActionButton(
+          onPressed: _themeController.toggleTheme,
+          child: _themeController.isDark
+              ? Icon(Icons.brightness_high)
+              : Icon(Icons.brightness_2),
+        );
+      }),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -97,7 +107,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           GestureDetector(
-                                                      child: Icon(
+                            child: Icon(
                               Icons.map,
                               color: Colors.orange,
                               size: 50,
@@ -167,7 +177,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           GestureDetector(
-                                                      child: Icon(
+                            child: Icon(
                               Icons.favorite_border,
                               color: Colors.redAccent,
                               size: 50,

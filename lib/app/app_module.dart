@@ -1,3 +1,6 @@
+import 'package:tuluagov/app/shared/theme/repositories/theme_repository_interface.dart';
+import 'package:tuluagov/app/shared/theme/theme_controller.dart';
+import 'package:tuluagov/app/shared/theme/repositories/theme_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:tuluagov/app/app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -18,16 +21,17 @@ import 'modules/todo/todo_module.dart';
 
 class AppModule extends MainModule {
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds => [        
+        Bind((i) => ThemeController(ThemeRepository())),
         Bind((i) => Dio()),
         Bind((i) => AppController()),
-        Bind<IAuthRepository>((i) => AuthRepository()), 
-        Bind((i) => AuthController()), 
+        Bind<IAuthRepository>((i) => AuthRepository()),
+        Bind((i) => AuthController()),
       ];
 
   @override
   List<Router> get routers => [
-        Router('/', child: (_,args) => SplashPage()),
+        Router('/', child: (_, args) => SplashPage()),
         Router('/login', module: LoginModule()),
         Router('/home', module: HomeModule()),
         Router('/news', module: NewsModule()),

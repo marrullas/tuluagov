@@ -1,4 +1,6 @@
+import 'package:tuluagov/app/modules/solidaridad/pages/solicitaayuda/solicitaayuda_controller.dart';
 import 'package:tuluagov/app/modules/solidaridad/pages/estadistica/estadistica_controller.dart';
+import 'package:tuluagov/app/modules/solidaridad/pages/solicitaayuda/solicitaayuda_page.dart';
 import 'package:tuluagov/app/modules/solidaridad/solidaridad_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tuluagov/app/modules/solidaridad/solidaridad_page.dart';
@@ -9,6 +11,7 @@ import 'pages/estadistica/estadistica_page.dart';
 class SolidaridadModule extends ChildModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => SolicitaayudaController()),
         Bind((i) => PiechartController()),
         Bind((i) => EstadisticaController()),
         Bind((i) => SolidaridadController()),
@@ -17,7 +20,8 @@ class SolidaridadModule extends ChildModule {
   @override
   List<Router> get routers => [
         Router(Modular.initialRoute, child: (_, args) => SolidaridadPage()),
-        Router('/estadistica', child:(_,args) => EstadisticaPage()),
+        Router('/estadistica', child: (_, args) => EstadisticaPage()),
+        Router('/solicita', child: (_, args) => SolicitaayudaPage()),
       ];
 
   static Inject get to => Inject<SolidaridadModule>.of();
